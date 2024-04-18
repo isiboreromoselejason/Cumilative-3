@@ -1,0 +1,93 @@
+﻿
+@{
+    ViewBag.Title = "New";
+}
+
+
+<script>
+    window.onload = function () {
+        document.getElementById("create").addEventListener("click", function () {
+            const xhr = new XMLHttpRequest();
+            xhr.open('POST', '/Teacher/Create');
+            xhr.send();
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    location.href = '/Teacher/List';
+                }
+            }
+        })
+    }
+</script>
+
+<div class="edu-breadcrumb-area breadcrumb-style-1 ptb--60 ptb_md--40 ptb_sm--40 bg-image">
+   
+  <div class="container checkout-page-style">
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="login-form-box">
+                <h3 class="mb-30">New Teacher</h3>
+                <a href="/Teacher/List" class="rn-btn edu-btn w-100 mb--30">
+                    <span>Back</span>
+                </a>
+                <form class="login-form" method="POST" action="/Teacher/Create">
+                    <div class="input-box mb--30">
+                        <input type="text" name="TeacherFname" placeholder="FirstName" />
+                    </div>
+                    <div class="input-box mb--30">
+                        <input type="text" placeholder="LastName" name="TeacherLname" />
+                    </div>
+                    <div class="input-box mb--30">
+                        <label>Hire Date</label>
+                        <input type="date" name="HireDate" />
+                    </div>
+                    <div class="input-box mb--30">
+                        <input type="text" placeholder="Employee Number" name="EmployeeNumber" />
+                    </div>
+                    <div class="input-box mb--30">
+                        <input type="text" placeholder="Salary" name="Salary" />
+                    </div>
+              
+                    <button class="rn-btn edu-btn w-100 mb--30" id="create">
+                        <span>Create</span>
+                    </button>
+
+                </form>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+        @*<div id="containershow">
+            <nav>
+                <a class="navlink" href="/Teacher/List">Back To Teachers</a>
+            </nav>
+            <h2>New Teacher</h2>
+            <form method="POST" action="/Teacher/Create">
+                <div class="inputrow">
+                    <label for="TeacherFname">First Name:</label>
+                    <input type="text" id="TeacherFname" name="TeacherFname" />
+                </div>
+
+                <div class="inputrow">
+                    <label for="TeacherLname">Last Name:</label>
+                    <input type="text" id="TeacherLname" name="TeacherLname" />
+                </div>
+
+                <label for="HireDate">Hire Date:</label>
+                <input type="date" id="HireDate" name="HireDate" />
+
+                <div class="inputrow">
+                    <label for="EmployeeNumber">EmployeeNumber:</label>
+                    <input type="text" id="EmployeeNumber" name="EmployeeNumber" />
+                </div>
+
+                <div>
+                    <label for="Salary">Salary:</label>
+                    <input type="Number" id="Salary" name="Salary" />
+                </div>
+
+                <div class="inputrow">
+                    <button id="create">Create Teacher</button>
+                </div>
+            </form>
+        </div>*@

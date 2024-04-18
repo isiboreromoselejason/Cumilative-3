@@ -1,0 +1,84 @@
+﻿
+@model IEnumerable<CumulativeProject1.Models.Teacher>
+@{
+    ViewBag.Title = "List";
+}
+
+<div class="edu-breadcrumb-area breadcrumb-style-1 ptb--60 ptb_md--40 ptb_sm--40 bg-image">
+    <div class="container eduvibe-animated-shape">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb-inner text-start">
+                    <div class="page-title">
+                        <h3 class="title">Teacher List</h3>
+                        <p>This page should be showing information about all Teachers</p>
+                    </div>
+                    <nav class="edu-breadcrumb-nav">
+                        <ol class="edu-breadcrumb d-flex justify-content-start liststyle">
+                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                            <li class="separator"><i class="ri-arrow-drop-right-line"></i></li>
+                            <li class="breadcrumb-item active" aria-current="page">Teacher List</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+
+            <div class="row g-5">
+                <form class="" action="/Teacher/List" method="GET">
+                    <input type="text" class="form-control-lg form-control col-lg-12" name="SearchKey" autocomplete="off" />
+                    <input type="submit" class="btn btn-dark" value="Search" />
+                </form>
+
+                @foreach (var teacher in Model)
+                {
+                    @*<div class="listitem row">
+                <div class="col-md-12"><a href="/Students/Show/@student.studentId">@student.studentFname @student.studentLname @student.studentnumber @student.enroldate</a></div>
+            </div>*@
+                    <!-- Start Event List  -->
+                    <div class="col-lg-12" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
+                        <div class="edu-event event-list radius-small">
+                            <div class="inner">
+
+                                <div class="content">
+                                    <div class="content-left">
+                                        <h5 class="title"><a href="/Teacher/Show/@teacher.teacherId">@teacher.teacherFname @teacher.teacherLname  </a></h5>
+
+                                    </div>
+                                    <div class="read-more-btn">
+                                        <a class="edu-btn btn-dark" href="/Teacher/Show/@teacher.teacherId">Details<i class="icon-arrow-right-line-right"></i></a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Event List  -->
+                }
+
+
+
+            </div>
+
+
+        </div>
+    </div>
+</div>
+@*<div id="containerlist">
+    <nav>
+        <a class="navlink" href="/Teacher/New">New Teacher</a>
+    </nav>
+    <h2>List of Teacher</h2>
+    <form action="/Teacher/List" method="GET">
+        <input type="text" name="SearchKey" autocomplete="off" />
+        <input type="submit" value="Search" />
+    </form>
+    @foreach (var teacher in Model)
+    {
+        <div class="listitem row">
+            <div class="col-md-12"><a href="/Teacher/Show/@teacher.teacherId">@teacher.teacherFname @teacher.teacherLname</a></div>
+        </div>
+    }
+</div>*@

@@ -1,0 +1,79 @@
+﻿
+@model IEnumerable<CumulativeProject1.Models.Students>
+@{
+    ViewBag.Title = "List";
+}
+
+@*<h2>List</h2>
+
+<p></p>
+
+<div id="containerlist">
+    <h2>List of Teacher</h2>
+    @foreach (var student in Model)
+    {
+        <div class="listitem row">
+            <div class="col-md-12"><a href="/Students/Show/@student.studentId">@student.studentFname @student.studentLname @student.studentnumber @student.enroldate</a></div>
+        </div>
+    }
+</div>*@
+
+<div class="edu-breadcrumb-area breadcrumb-style-1 ptb--60 ptb_md--40 ptb_sm--40 bg-image">
+    <div class="container eduvibe-animated-shape">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb-inner text-start">
+                    <div class="page-title">
+                        <h3 class="title">Student List</h3>
+                        <p>This page should be showing information about all Students</p>
+                    </div>
+                    <nav class="edu-breadcrumb-nav">
+                        <ol class="edu-breadcrumb d-flex justify-content-start liststyle">
+                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                            <li class="separator"><i class="ri-arrow-drop-right-line"></i></li>
+                            <li class="breadcrumb-item active" aria-current="page">Student List</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+ 
+            <div class="container">
+                <div class="row g-5">
+                    @foreach (var student in Model)
+                    {
+                        @*<div class="listitem row">
+                            <div class="col-md-12"><a href="/Students/Show/@student.studentId">@student.studentFname @student.studentLname @student.studentnumber @student.enroldate</a></div>
+                        </div>*@
+                        <!-- Start Event List  -->
+                        <div class="col-lg-12" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
+                            <div class="edu-event event-list radius-small">
+                                <div class="inner">
+                                    
+                                    <div class="content">
+                                        <div class="content-left">
+                                            <h5 class="title"><a href="/Students/Show/@student.studentId">@student.studentFname @student.studentLname  </a></h5>
+                                            <ul class="event-meta">
+                                                <li><i class="icon-calendar-2-line"></i>@student.enroldate</li>
+                                                <li>@student.studentnumber</li>
+                                            </ul>
+                                        </div>
+                                        <div class="read-more-btn">
+                                            <a class="edu-btn btn-dark" href="/Students/Show/@student.studentId">Details<i class="icon-arrow-right-line-right"></i></a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Event List  -->
+                    }
+
+
+
+                </div>
+
+
+            </div>
+        </div>
+        </div>

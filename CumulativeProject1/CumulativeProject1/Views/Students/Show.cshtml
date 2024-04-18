@@ -1,0 +1,59 @@
+﻿﻿@model CumulativeProject1.Models.Students
+@{
+    ViewBag.Title = "Show";
+}
+
+<div class="edu-breadcrumb-area breadcrumb-style-1 ptb--60 ptb_md--40 ptb_sm--40 bg-image">
+    <div class="container eduvibe-animated-shape">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb-inner text-start">
+                    <div class="page-title">
+                        <h3 class="title">Single Student</h3>
+                        <p>This page should be showing information about a Student</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row g-5">
+               
+                    <!-- Start Event List  -->
+                    <div class="col-lg-12" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
+                        <div class="edu-event event-list radius-small">
+                            <div class="inner">
+
+                                <div class="content">
+                                    <div class="content-left">
+                                        <h5 class="title">@Model.studentFname @Model.studentLname  </a></h5>
+                                        <ul class="event-meta">
+                                            <li><i class="icon-calendar-2-line"></i>@Model.enroldate</li>
+                                            <li>@Model.studentnumber</li>
+                                        </ul>
+                                    </div>
+                                    <div class="read-more-btn">
+                                        <a class="edu-btn btn-dark" href="/Student/List/@Model.studentId">Back To List<i class="icon-arrow-right-line-right"></i></a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                 
+
+
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+
+@*<a class="navlink" href="/Student/List">Back To Student</a>
+<div id="containershow">
+    <h2>@Model.studentFname @Model.studentLname</h2>
+    <p>@Model.studentnumber @Model.enroldate</p>
+</div>*@
